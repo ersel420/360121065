@@ -22,7 +22,11 @@
                             <div class="text-content">
                                 <h4> {{ service.name }} </h4>
                                 <span>₺ {{service.price}} </span>
-                                <button type="button" class="addCart btn btn-warning">Add to Cart!</button>
+                                {% comment %} <button type="button" id="add-btn" value="{{service.id}}" class="addCart btn btn-warning">Add to Cart!</button> {% endcomment %}
+                                <button type="button" class="addCart btn btn-warning">
+                                    <a class="text-dark text-decoration-none" href="{{ service.get_absolute_url }}">Service Detail</a>
+                                 </button>
+                                
                             </div>
                         </div>
                     </div>

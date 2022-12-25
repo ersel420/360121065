@@ -22,7 +22,7 @@ class Category(models.Model):
         verbose_name_plural = 'Categories'
 
     def get_absolute_url(self):
-        return reverse('categoryFilter', args = [self.slug])
+        return reverse('website:categoryFilter', args = [self.slug])
         # return reverse("categoryFilter", kwargs={"slug": self.slug})
 
     def __str__(self):
@@ -40,6 +40,9 @@ class Service(models.Model):
 
     class Meta:
         verbose_name_plural = 'Services'
+
+    def get_absolute_url(self):
+        return reverse('website:serviceDetail', args = [self.slug])
 
     def __str__(self):
         return self.name

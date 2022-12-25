@@ -15,14 +15,17 @@
         <div class="row">
             <div class="col-md-12">
                 <div id="owl-testimonials" class="owl-carousel owl-theme">
-                    {% for service in services %}
+                    {% for service in service %}
                     <div class="item">
                         <div class="testimonials-item">
                             <a href="{{ service.bigImage.url }}" data-lightbox="image-1"><img src="{{ service.image.url }}" alt=""></a>
                             <div class="text-content">
                                 <h4> {{ service.name }} </h4>
                                 <span>₺ {{service.price}} </span>
-                                <button type="button" class="addCart btn btn-warning">Add to Cart!</button>
+                                {% comment %} <button type="button" class="addCart btn btn-warning">Add to Cart!</button> {% endcomment %}
+                                <button type="button" class="addCart btn btn-warning">
+                                    <a class="text-dark text-decoration-none" href="{{ service.get_absolute_url }}">Service Detail</a>
+                                 </button>
                             </div>
                         </div>
                     </div>

@@ -9,22 +9,13 @@ def home(request):
 def services(request):
     return render(request, "website/services.html")
 
-def allCategories(request):
-    return {
-        'categories': Category.objects.all() 
-    }
-
-# def allServices(request):
-#     return {
-#         'servic': Service.objects.all() 
-#     }
-
 def portfolio(request):
     service = Service.objects.all()
     return render(request, "website/portfolio.html", {'services': service})
 
-def serviceDetail(request, slug): #Şuan kullanılmıyor.
+def serviceDetail(request, slug):
     service = get_object_or_404(Service, slug = slug, is_active = True)
+    return render(request, 'website/portfolio-item.html', {'service': service})
 
 def categoryFilter(request, category_slug):
     selected = get_object_or_404(Category, slug = category_slug)
@@ -45,6 +36,3 @@ def register(request):
 
 def profile(request):
     return render(request, "website/profile.html")
-
-def cart(request):
-    return render(request, "website/cart.html")
