@@ -27,12 +27,3 @@ def our_story(request):
 
 def contact_us(request):
     return render(request, "website/contact-us.html")
-
-def login(request):
-    return render(request, "website/login.html")
-
-def register(request):
-    return render(request, "website/register.html")
-
-def profile(request):
-    return render(request, "website/profile.html")

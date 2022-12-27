@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %} Services {% endblock title %}
+
+{% block content %}
+
+<div class="service-content" id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                {% include 'website_partials/_services-text.html' %}
+            </div>
+            <div class="col-md-8">
+                <div class="row">
+                    {% include 'website_partials/_services-items.html' %}
+                </div>
+            </div>                
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

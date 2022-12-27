@@ -37,7 +37,7 @@ def cartDelete(request): #Delete Item from Cart
             })
         return response
 
-def cartUpdate(request):
+def cartUpdate(request): #Update Item from Cart
     cart = Cart(request)
     if request.POST.get('action') == 'post':
         serviceID = int(request.POST.get('serviceid'))

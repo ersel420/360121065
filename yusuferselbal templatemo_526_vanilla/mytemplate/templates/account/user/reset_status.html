@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Reset Password {% endblock title %}
+
+{% block content %}
+
+{% if request.user.is_authenticated %}
+<script>
+    window.location.href = "{% url 'website:home' %}"
+</script>
+{% endif %}
+
+<link rel="stylesheet" href={% static 'website/css/login.css' %}>
+
+<section class="ftco-section">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-md-6 text-center mb-5">
+                {% if 'email' in request.get_full_path %}
+				<h2 class="heading-section">Reset link is sent.</h2>
+                <p>Check your e-mail for info.</p>
+                {% endif %}
+                {% if 'complete' in request.get_full_path %}
+                <h3 class="mb-4 text-center">Password reset success.</h3>
+                <a href={% url 'account:login' %}>Go to login page.</a>
+                {% endif %}
+			</div>
+		</div>
+	</div>
+</section>
+<br> <br> <br> <br>
+
+<script src={% static 'website/js/popper.js' %}></script>
+{% endblock content %}

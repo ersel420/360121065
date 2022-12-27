@@ -28,16 +28,17 @@
 Vanilla Template
 https://templatemo.com/tm-526-vanilla
 -->
+
 <body id="pt" style="background-color: brown;"> {% comment %} pt = "Page Top" {% endcomment %}
 
-  {% include 'partials/_side-navbar.html' %}
+  {% include '_partials/_side-navbar.html' %}
 
   {% block content %} {% endblock content %}
 
-  {% include 'partials/_footer.html' %}
+  {% include '_partials/_footer.html' %}
 
 </body>
 
-  {% include 'partials/_script.html' %}
+  {% include '_partials/_script.html' %}
 
 </html>

@@ -1,5 +1,5 @@
 from django.db import models
-from django.db.models.functions import Now
+from django.conf import settings #Foreign Key için settings.AUTH_USER_MODEL
 from django.contrib.auth.models import User
 from django.urls import reverse
 
