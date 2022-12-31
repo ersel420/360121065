@@ -1,7 +1,7 @@
 from django.db import models
 from django.core.mail import send_mail
 from django.utils.translation import gettext_lazy as _
-from django.contrib.auth.models import (AbstractBaseUser, BaseUserManager, PermissionsMixin)
+from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
 
 # Create your models here.
 class CustomAccountManager(BaseUserManager):
@@ -13,10 +13,10 @@ class CustomAccountManager(BaseUserManager):
 
         if other_fields.get('is_staff') is not True:
             raise ValueError(
-                'Superuser must be assigned to is_staff=True.')
+                'Superuser must be assigned to is_staff = True.')
         if other_fields.get('is_superuser') is not True:
             raise ValueError(
-                'Superuser must be assigned to is_superuser=True.')
+                'Superuser must be assigned to is_superuser = True.')
 
         return self.create_user(email, user_name, password, **other_fields)
     
@@ -26,8 +26,7 @@ class CustomAccountManager(BaseUserManager):
             raise ValueError(_('You must provide an email address'))
 
         email = self.normalize_email(email)
-        user = self.model(email = email, user_name=user_name,
-                          **other_fields)
+        user = self.model(email = email, user_name = user_name,**other_fields)
         user.set_password(password)
         user.save()
         return user
@@ -61,5 +60,5 @@ class UserBase(AbstractBaseUser, PermissionsMixin):
             message,
             'l@1.com',
             [self.email],
-            fail_silently=False,
+            fail_silently = False,
         )

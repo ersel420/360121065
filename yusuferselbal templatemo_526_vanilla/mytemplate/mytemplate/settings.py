@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'website',
     'cart',
     'account',
+    'payment',
 ]
 
 MIDDLEWARE = [
@@ -132,10 +133,11 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+#Login
+LOGIN_REDIRECT_URL = 'http://127.0.0.1:8000'
+
 #User Table
 AUTH_USER_MODEL = 'account.UserBase'
-LOGIN_REDIRECT_URL = '/account/dashboard'
-LOGIN_URL = '/account/login/'
 
 #E-Mail
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

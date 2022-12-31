@@ -67,6 +67,7 @@ class UserEditForm(UserChangeForm):
         'class': 'col-md-12',
         'placeholder': 'Phone Number',
         'id': 'form-phone',
+        
     }))
     address = forms.CharField(label = 'Address', max_length = 500, widget = forms.TextInput(attrs = {
         'class': 'col-md-12',

@@ -23,8 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('website.urls', namespace = 'website')), #App: Webiste
     path('cart/', include('cart.urls', namespace = 'cart')), #App: Cart
-    path('account/', include('account.urls', namespace = 'account')), #App: Acount
-
+    path('account/', include('account.urls',  namespace = 'account')), #App: Account
+    path('payment/', include('payment.urls',  namespace = 'payment')), #App: Payment
 ]
 
 if settings.DEBUG:

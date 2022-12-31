@@ -1,4 +1,4 @@
 from .cart import Cart
 
-def cart(request):
+def cart(request): #Cart Items
     return {'cart': Cart(request)}

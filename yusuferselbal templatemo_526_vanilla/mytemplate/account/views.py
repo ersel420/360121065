@@ -1,25 +1,23 @@
-from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
-from .models import UserBase
-from .forms import RegistrationForm, UserEditForm
-from .tokens import accountActivationToken
 from django.contrib.sites.shortcuts import get_current_site
 from django.template.loader import render_to_string
-from django.utils.encoding import force_bytes, force_str
 from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
+from django.utils.encoding import force_bytes, force_str
+from .tokens import accountActivationToken
+from .models import UserBase
+from .forms import RegistrationForm, UserEditForm
 
 # Create your views here.
 
 @login_required
-def dashboard(request):
-    return render(request, 'website/home.html')
+def dashboard(request): #Dashboard
+    return render(request, 'account/user/dashboard.html')
         
-def accountRegister(request):
-
-    # if request.user.is_authenticated:
-    #     return redirect('account:dashboard')
+def accountRegister(request): #Register
+    if request.user.is_authenticated:
+        return redirect('website:home')
 
     if request.method == 'POST':
         registerForm = RegistrationForm(request.POST)
@@ -38,13 +36,15 @@ def accountRegister(request):
                 'token': accountActivationToken.make_token(user),
             })
             user.email_user(subject=subject, message=message)
-            return HttpResponse('Registered Succesfully and Activation is Sent to Mail Address.')
+            return render(request, 'account/registration/acc-activation-sent.html')
     else:
         registerForm = RegistrationForm()
-    return render(request, 'account/registration/register.html', {'form': registerForm})
+    return render(request, 'account/registration/register.html', {
+        'form': registerForm,
+    })
 
 
-def accountActivate(request, uidb64, token):
+def accountActivate(request, uidb64, token): #Activate Account
     try:
         uid = force_str(urlsafe_base64_decode(uidb64))
         user = UserBase.objects.get(pk=uid)
@@ -54,13 +54,13 @@ def accountActivate(request, uidb64, token):
         user.is_active = True
         user.save()
         login(request, user)
-        return redirect('account:dashboard')
+        return redirect('website:home')
     else:
         return render(request, 'account/registration/acc-activation-invalid.html')
 
 
 @login_required
-def editUser(request):
+def editUser(request): #Edit User Info
     if request.method == 'POST':
         userForm = UserEditForm(instance = request.user, data = request.POST)
         if userForm.is_valid():
@@ -73,7 +73,7 @@ def editUser(request):
     })
 
 @login_required
-def deleteUser(request):
+def deleteUser(request): #Delete User from Database (Actually, set is_active = False)
     user = UserBase.objects.get(user_name = request.user)
     user.is_active = False
     user.save()
