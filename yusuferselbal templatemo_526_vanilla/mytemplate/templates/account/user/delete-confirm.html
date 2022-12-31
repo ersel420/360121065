@@ -5,6 +5,20 @@
 
 {% block content %}
 
-<h1>Account Deleted, Thank You.</h1>
+<link rel="stylesheet" href={% static 'account/css/login.css' %}>
+
+<section class="ftco-section">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-md-6 text-center mb-5">
+				<h2 class="heading-section">Account deleted.</h2>
+                <p class="text-white">Thank you.</p>
+			</div>
+		</div>
+	</div>
+</section>
+<br> <br> <br> <br>
+
+<script src={% static 'website/js/popper.js' %}></script>
 
 {% endblock content %}

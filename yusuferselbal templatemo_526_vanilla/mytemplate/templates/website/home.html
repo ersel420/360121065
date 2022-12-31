@@ -7,12 +7,12 @@
 <div class="parallax-content baner-content" id="home">
     <div class="container">
         <div class="first-content">
-            <h1>Vanilla</h1>
+            <h1>Long Blue</h1>
             <span><em>
                 {% if user.is_authenticated %}
-                {{ user.firstName }},
+                {{ user.firstName }}<span class="text-white">,</span>
                 {% else %}
-                Guest,
+                Guest<span class="text-white">,</span>
                 {% endif %}
             </em> Welcome to Our Shop.</span>
             <br/><br/>
@@ -25,7 +25,7 @@
             </div>
             {% else %}
             <div class="primary-button" style="display: inline;">
-                <a href="{% url 'website:portfolio' %}">Discover</a>
+                <a href="{% url 'website:services' %}">Discover</a>
             </div>
             {% endif %}
         </div>

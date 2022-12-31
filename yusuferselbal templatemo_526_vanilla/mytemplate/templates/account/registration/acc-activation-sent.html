@@ -17,19 +17,11 @@
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-md-6 text-center mb-5">
-                {% if 'email' in request.get_full_path %}
-				<h2 class="heading-section">Reset link is sent.</h2>
-                <p class = "text-white">Check your e-mail for info.</p>
-                {% endif %}
-                {% if 'complete' in request.get_full_path %}
-                <h2 class="mb-4 text-center">Password reset success.</h2>
-                <a href={% url 'account:login' %}>Go to login page.</a>
-                {% endif %}
+				<h2 class="heading-section">Registered Succesfully and Activation is Sent to Mail Address.</h2>
 			</div>
 		</div>
-	</div>
 </section>
-<br> <br> <br> <br>
+</br></br></br>
 
 <script src={% static 'website/js/popper.js' %}></script>
 

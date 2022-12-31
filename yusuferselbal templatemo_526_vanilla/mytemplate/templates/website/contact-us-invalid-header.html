@@ -1,15 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %} Invalid User {% endblock title %}
+{% block title %} Invalid Header {% endblock title %}
 
 {% block content %}
-
-{% if request.user.is_authenticated %}
-<script>
-    window.location.href = "{% url 'website:home' %}"
-</script>
-{% endif %}
 
 <link rel="stylesheet" href={% static 'account/css/login.css' %}>
 
@@ -17,7 +11,8 @@
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-md-6 text-center mb-5">
-				<h2 class="heading-section">First, you need to activate your account.</h2>
+				<h2 class="heading-section">Error: Invalid Header!</h2>
+                <p>Your message is not sent because of invalid header.</p>
 			</div>
 		</div>
 	</div>

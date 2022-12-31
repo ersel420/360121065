@@ -1,0 +1,9 @@
+body {
+    background-image: url("../img/basic.jpg");
+}
+
+@media (min-width: 1025px) {
+    .h-custom {
+    height: 100vh !important;
+    }
+    }

@@ -1,6 +1,9 @@
 body{
     margin-top:20px;
     color: #9b9ca1;
+    background-image: url("../img/basic.jpg");
+    background-repeat: no-repeat;
+	background-size: cover;
 }
 .bg-secondary-soft {
     background-color: rgba(208, 212, 217, 0.1) !important;

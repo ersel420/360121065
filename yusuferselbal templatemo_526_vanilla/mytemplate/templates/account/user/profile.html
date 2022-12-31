@@ -5,14 +5,14 @@
 
 {% block content %}
 
-<link rel="stylesheet" href={% static 'website/css/profile.css' %}>
+<link rel="stylesheet" href={% static 'account/css/profile.css' %}>
 
 <div class="container">
     <div class="row">
 		<div class="col-12">
 			<!-- Page title -->
-			<div class="my-5">
-				<h3>My Profile</h3>
+			<div class="my-5 text-white">
+				<h1>My Profile</h1>
 				<hr style="color: white;">
 			</div>
 			<!-- Form START -->
@@ -73,32 +73,7 @@
 								</div>
 							</div> <!-- Row END -->
 						</div>
-					</div>
-                
-
-			    <!-- change password -->
-					{% comment %} <div class="col-xxl-12">
-						<div class="bg-secondary-soft px-4 py-5 rounded">
-							<div class="row g-3">
-								<h4 class="my-4 text-white">{{user.user_name}} | Change Password</h4>
-								<!-- Old password -->
-								<div class="col-md-6">
-									<label for="exampleInputPassword1" class="form-label">Old password *</label>
-									<input type="password" class="form-control" id="exampleInputPassword1">
-								</div>
-								<!-- New password -->
-								<div class="col-md-6">
-									<label for="exampleInputPassword2" class="form-label">New password *</label>
-									<input type="password" class="form-control" id="exampleInputPassword2">
-								</div>
-								<!-- Confirm password -->
-								<div class="col-md-12">
-									<label for="exampleInputPassword3" class="form-label">Confirm Password *</label>
-									<input type="password" class="form-control" id="exampleInputPassword3">
-								</div>
-							</div>
-						</div>
-					</div> {% endcomment %}
+					</div>		
 				</div> <!-- Row END -->
 				<!-- button -->
 				<div class="gap-3 d-md-flex justify-content-md-end text-center mb-5">
@@ -111,7 +86,7 @@
                 {% csrf_token %}
                 <p class=" h3 pt-4 font-weight-bold text-white">{{ user.user_name }} | Delete Account</p>
                 <p class="text-white">Are you sure you want to delete your account?</p>
-                <button type="submit" role="button" class="btn btn-danger btn-block py-2 mb-4 mt-2 fw-bold w-100">Delete</button>
+                <button type="submit" role="button" class="btn btn-danger btn-lg btn-block py-2 mb-4 mt-2 fw-bold w-100">Delete</button>
             </form>
 
 		</div>

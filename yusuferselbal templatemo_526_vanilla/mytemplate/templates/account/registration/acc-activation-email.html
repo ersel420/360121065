@@ -3,6 +3,6 @@
 Hi {{ user.user_name }},
 Your account has been created, but you need to activate your account from below link:
 
-http://{{ domain }}{% url 'account:activate' uidb64=uid token=token %}
+{{ protocol }}://{{ domain }}{% url 'account:activate' uidb64=uid token=token %}
 
 {% endautoescape %}

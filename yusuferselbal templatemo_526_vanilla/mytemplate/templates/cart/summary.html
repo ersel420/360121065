@@ -4,7 +4,7 @@
 
 {% block content %}
 
-<link rel="stylesheet" href={% static 'website/css/cart.css' %}>
+<link rel="stylesheet" href={% static 'cart/css/cart.css' %}>
 
 <section class="h-100 h-custom" style="background-color: #eee;">
     <div class="container py-5 h-100">
@@ -15,14 +15,14 @@
   
               <div class="row">
   
-                <div class="col-lg-7">
-                  <h5 class="mb-3"><a href="{% url 'website:portfolio' %}" class="text-body"><i
+                <div class="col-lg-12">
+                  <h5 class="mb-3"><a href="{% url 'website:services' %}" class="text-body"><i
                         class="fas fa-long-arrow-alt-left me-2"></i>Continue Shopping</a></h5>
                   <hr>
   
                   <div class="d-flex justify-content-between align-items-center mb-4">
                     <div>
-                      <p class="mb-1">Shopping cart</p>
+                      <p class="mb-1">Shopping Cart</p>
                       <p class="mb-0">
                       {% with totalQty=cart|length %}
                       You have
@@ -33,119 +33,68 @@
                       0
                       {% endif %}
                       </span>
-                      items in your cart
+                      items in your cart.
                       </p>
                       {% endwith %}
                     </div>
                   </div>
 
-                  {% for item in cart %}
-                  {% with service=item.service %}
-
-                  <div data-index="{{ service.id }}" class="card mb-3 service-cart">
+                  {% for service in cart %}
+                  <div data-index="{{ service.sID }}" class="card mb-3 service-cart">
                     <div class="card-body">
                       <div class="d-flex justify-content-between">
                         <div class="d-flex flex-row align-items-center">
                           <div>
-                            <a href="{{ service.get_absolute_url }}">
-                              <img src="{{ service.image.url }}" class="img-fluid rounded-3" alt="Shopping Item" style="width: 65px;">
+                            <a href="{{ service.sUrl }}">
+                              <img src="{{ service.sImageUrl }}" class="img-fluid rounded-3" alt="Shopping Item" style="width: 65px;">
                             <a/>
                           </div>
                           <div class="ms-3">
-                            <h5><a href="{{ service.get_absolute_url }}">{{ service.name }}<a/></h5> 
-                            <p class="small mb-0">{{ service.description }}</p>
+                            <h5><a href="{{ service.sUrl }}">{{ service.sName }}<a/></h5> 
+                            <p class="small mb-0">{{ service.sDescription }}</p>
                           </div>
                         </div>
                         <div class="d-flex flex-row align-items-center">
                           <div style="width: 50px;">
-                            <h5 class="fw-normal mb-2"><input id="service-qty-{{ service.id }}" type="number" min="1" name="someid" value="{{ item.qty }}" style="width: 50px;"/></h5>
+                            <h5 class="fw-normal mb-2"><input id="service-qty-{{ service.sID }}" type="number" min="1" name="someid" value="{{ service.itemQty }}" style="width: 50px;"/></h5>
                           </div>
                           <div style="width: 80px;">
-                            <h5 id="item-price" class="mb-0">₺ {{ service.price }}</h5>
+                            <h5 id="item-price" class="mb-0">₺ {{ service.sPrice }}</h5>
                           </div>
-                            <a class="update-btn me-2" style="color: #cecece;" data-index="{{ service.id }}"><i class="fas fa-refresh" style="cursor: pointer; "></i></a>
-                            <a class="delete-btn" style="color: #cecece;" data-index="{{ service.id }}"><i class="fas fa-trash-alt" style="cursor: pointer; "></i></a>
+                            <a class="update-btn me-2" style="color: #cecece;" data-index="{{ service.sID }}"><i class="fas fa-refresh" style="cursor: pointer; "></i></a>
+                            <a class="delete-btn" style="color: #cecece;" data-index="{{ service.sID }}"><i class="fas fa-trash-alt" style="cursor: pointer; "></i></a>
                         </div>
                       </div>
                     </div>
                   </div>
-
-                  {% endwith %}
                   {% endfor %}                        
   
                 </div>
-                <div class="col-lg-5">
-  
-                  <div class="card bg-primary text-white rounded-3">
-                    <div class="card-body">
-                      <div class="d-flex justify-content-between align-items-center mb-4">
-                        <h5 class="mb-0">Card Details</h5>
-                      </div>
-  
-                      <p class="small mb-2">Card Type</p>
-                      <a href="#!" type="submit" class="text-white"><i
-                          class="fab fa-cc-mastercard fa-2x me-2"></i></a>
-                      <a href="#!" type="submit" class="text-white"><i
-                          class="fab fa-cc-visa fa-2x me-2"></i></a>
-                      <a href="#!" type="submit" class="text-white"><i
-                          class="fab fa-cc-amex fa-2x me-2"></i></a>
-                      <a href="#!" type="submit" class="text-white"><i 
-                          class="fab fa-cc-paypal fa-2x"></i></a>
-  
-                      <form class="mt-4">
-                        <div class="form-outline form-white mb-4">
-                          <input type="text" id="typeName" class="form-control form-control-lg" siez="17"
-                            placeholder="Cardholder's Name" />
-                          <label class="form-label" for="typeName">Cardholder's Name</label>
-                        </div>
-  
-                        <div class="form-outline form-white mb-4">
-                          <input type="text" id="typeText" class="form-control form-control-lg" siez="17"
-                            placeholder="1234 5678 9012 3457" minlength="19" maxlength="19" />
-                          <label class="form-label" for="typeText">Card Number</label>
-                        </div>
-  
-                        <div class="row mb-4">
-                          <div class="col-md-6">
-                            <div class="form-outline form-white">
-                              <input type="text" id="typeExp" class="form-control form-control-lg"
-                                placeholder="MM/YYYY" size="7" id="exp" minlength="7" maxlength="7" />
-                              <label class="form-label" for="typeExp">Expiration</label>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-outline form-white">
-                              <input type="password" id="typeText" class="form-control form-control-lg"
-                                placeholder="&#9679;&#9679;&#9679;" size="1" minlength="3" maxlength="3" />
-                              <label class="form-label" for="typeText">Cvv</label>
-                            </div>
-                          </div>
-                        </div>
-  
-                      </form>
-  
-                      <hr class="my-4">
-  
-                      <div class="d-flex justify-content-between">
-                        <p class="mb-2">Subtotal</p>
-                        <p id="subtotal" class="mb-2">₺ {{ cart.cartTotal }}</p>
-                      </div>
-
-                      <br/> <br/> <br/>
-  
-                      <button type="button" class="btn btn-info btn-block btn-lg">
-                        <div class="d-flex justify-content-between">
-                          <span>Checkout<i class="fas fa-long-arrow-alt-right ms-2"></i></span>
-                        </div>
-                      </button>
-  
-                    </div>
-                  </div>
-  
-                </div>
-  
               </div>
-  
+              <div class="row">
+                <div class="col-lg-10">
+                  
+                  <button id="submit" type="submit" class="btn btn-info btn-block btn-lg">
+                    <div class="d-flex justify-content-between">
+                      <span><a class="text-dark" 
+                         href= {% if total > 0 %} "{% url 'payment:pay' %}"
+                               {% else %} "{% url 'website:services' %}"
+                               {% endif %}>
+                        
+                        {% if total > 0 %}
+                        Continue
+                        {% else %}
+                        Please add something to card.
+                        {% endif %}
+                      </a><i class="fas fa-long-arrow-alt-right ms-2"></i></span>
+                    </div>
+                  </button>
+                </div>
+                <div class="col-lg-2 d-flex justify-content-between">
+                  <p class="mb-2">Subtotal</p>
+                  <p id="subtotal" class="mb-2">₺ <span id="total">{{ total }}</span></p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -169,9 +118,13 @@
             },
             success: function (json) {
               $('.service-cart[data-index="' + srvID + '"]').remove();
-              document.getElementById("cart-qty").innerHTML = json.qty;
-              document.getElementById("summary-qty").innerHTML = json.qty;
-              document.getElementById("subtotal").innerHTML = "₺" + json.subtotal;
+              document.getElementById("cart-qty").innerHTML = json.qty + " Items"; //Side Navbar Quantity
+              document.getElementById("summary-qty").innerHTML = json.qty; //Cart Quantity
+              document.getElementById("subtotal").innerHTML = "₺ " + json.subtotal; //Subtotal Text
+
+              //if (document.getElementById("total").innerHTML === "0") {
+                //document.getElementById("submit").classList.toggle("disabled")
+              //}
             },
             error: function (xhr, errmsg, err) {}
         });
@@ -191,10 +144,9 @@
               action: 'post',
           },
           success: function (json) {
-            document.getElementById("cart-qty").innerHTML = json.qty; //Side Navbar Quantity
+            document.getElementById("cart-qty").innerHTML = json.qty + " Items"; //Side Navbar Quantity
             document.getElementById("summary-qty").innerHTML = json.qty; //Cart Quantity
-            document.getElementById("subtotal").innerHTML = "₺" + json.subtotal; //Subtotal Text
-            //document.getElementById("item-price").innerHTML = "₺";
+            document.getElementById("subtotal").innerHTML = "₺ " + json.subtotal; //Subtotal Text
           },
           error: function (xhr, errmsg, err) {}
       });
