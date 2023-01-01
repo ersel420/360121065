@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} 
+
+    {% if 'success' in case %}
+        Payment Successful
+    {% elif 'fail' in case %}
+        Payment Failed
+    {% else %}
+        Payment Status Unknown
+    {% endif %}
+
+{% endblock title %}
+
+{% block content%}
+
+<link rel="stylesheet" href={% static 'account/css/login.css' %}>
+
+<section class="ftco-section">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-md-6 text-center mb-5">
+				<h2 class="heading-section">
+                    {% if 'success' in case %}
+                        Your payment has been successfully completed and your order has been received.
+                    {% elif 'fail' in case %}
+                        Your payment failed and your order could not be received. Try again.
+                    {% else %}
+                        Unknown payment status. Try again.
+                    {% endif %}
+                </h2>
+                <p class="text-white"><a href="{% url 'account:dashboard' %}">Go to your dashboard</a></p>
+			</div>
+		</div>
+</section>
+</br></br></br>
+
+<script src={% static 'website/js/popper.js' %}></script>
+
+{% endblock content%}

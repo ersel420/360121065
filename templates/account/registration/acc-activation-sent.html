@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Account Activation {% endblock title %}
+
+{% block content %}
+
+{% if request.user.is_authenticated %}
+<script>
+    window.location.href = "{% url 'website:home' %}"
+</script>
+{% endif %}
+
+<link rel="stylesheet" href={% static 'account/css/login.css' %}>
+
+<section class="ftco-section">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-md-6 text-center mb-5">
+				<h2 class="heading-section">Registered Succesfully and Activation is Sent to Mail Address.</h2>
+			</div>
+		</div>
+</section>
+</br></br></br>
+
+<script src={% static 'website/js/popper.js' %}></script>
+
+{% endblock content %}

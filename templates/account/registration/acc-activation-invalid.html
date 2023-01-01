@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Invalid User {% endblock title %}
+
+{% block content %}
+
+{% if request.user.is_authenticated %}
+<script>
+    window.location.href = "{% url 'website:home' %}"
+</script>
+{% endif %}
+
+<link rel="stylesheet" href={% static 'account/css/login.css' %}>
+
+<section class="ftco-section">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-md-6 text-center mb-5">
+				<h2 class="heading-section">First, you need to activate your account.</h2>
+			</div>
+		</div>
+	</div>
+</section>
+<br> <br> <br> <br>
+
+<script src={% static 'website/js/popper.js' %}></script>
+
+{% endblock content %}

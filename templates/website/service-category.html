@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Services {% endblock title %}
+
+{% block content %}
+
+<style>
+
+    .dropdown-menu > li:hover {
+        background-color: orange;
+      }
+
+</style>
+
+<div class="parallax-content projects-content" id="portfolio">
+    <div class="container">
+        <div class="">
+            <button id="category-dropdown" type="button" class="btn btn-block w-100 btn-lg btn-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 2rem;">
+                <b>Categories</b>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="category-dropdown">
+                <li>
+                    <b><a class="text-dark d-block text-center" style=" font-size: 1.35rem;" href="{% url 'website:services' %}"><span>All</span></a></b></br>
+                </li>
+                {% for category in categories %}
+                <li>
+                    <b><a class="text-dark d-block text-center" style=" font-size: 1.35rem;" href="{{ category.get_absolute_url }}"><span>{{ category.name }}</span></a></b></br>
+                </li>
+                {% endfor %}
+            </ul>    
+        </div>  
+        <div class="row">
+            <div class="col-md-12">
+                <div id="owl-testimonials" class="owl-carousel owl-theme">
+                    {% for service in service %}
+                    <div class="item">
+                        <div class="testimonials-item">
+                            <a href="{{ service.bigImage.url }}" data-lightbox="image-1"><img src="{{ service.image.url }}" alt=""></a>
+                            <div class="text-content">
+                                <h4> {{ service.name }} </h4>
+                                <span>₺ {{service.price}} </span>
+                                <button type="button" class="addCart btn btn-lg btn-warning">
+                                    <a class="text-dark text-decoration-none" href="{{ service.get_absolute_url }}">Service Detail</a>
+                                 </button>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content%}
