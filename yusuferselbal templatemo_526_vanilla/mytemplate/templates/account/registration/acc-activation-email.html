@@ -1,8 +1,0 @@
-{% autoescape off %}
-
-Hi {{ user.user_name }},
-Your account has been created, but you need to activate your account from below link:
-
-{{ protocol }}://{{ domain }}{% url 'account:activate' uidb64=uid token=token %}
-
-{% endautoescape %}
