@@ -45,7 +45,7 @@ pip install Pillow
 ```bash
 pip install six
 ```
-- **[İyzipay](https://github.com/iyzico/iyzipay-python "İyzipay")**  &rarr; Used for payment management.
+- **[Iyzipay](https://github.com/iyzico/iyzipay-python "Iyzipay")**  &rarr; Used for payment management.
 ```bash
 pip install iyzipay
 ```
