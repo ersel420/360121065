@@ -49,11 +49,11 @@ pip install six
 ```bash
 pip install iyzipay
 ```
-## :star: Cards for Payment
+## :star: Test Cards for Payment
 
 Click [here](https://github.com/iyzico/iyzipay-python/blob/master/README.md#mock-test-cards "here") for original.
 
-### :star: Normal Cards
+### :star: Normal Test Cards
 Card Number| Bank| Card Type
 -----------| ----| ---------
 5526080000000006 | Akbank| Master Card
