@@ -140,6 +140,3 @@ LOGIN_URL = '/account/login'
 
 #E-Mail
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
-#Cart
-CART_SESSION_ID = 'cart'
