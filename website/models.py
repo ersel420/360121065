@@ -16,7 +16,7 @@ class Category(models.Model):
         return self.name
     
 class Service(models.Model):
-    category =  models.ForeignKey(Category, related_name = 'service', on_delete=models.CASCADE)
+    category =  models.ForeignKey(Category, on_delete=models.CASCADE)
     name = models.CharField(max_length = 100)
     description = models.TextField(blank = True)
     image = models.ImageField(upload_to = 'static/website/img/')
