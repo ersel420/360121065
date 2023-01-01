@@ -1,5 +1,5 @@
 
-# E-Commerce Website Demo with Django
+# 360121065 - E-Commerce Website Demo with Django
 
 A simple e-commerce website demo made with Django. It was made as a project of the BLY2005 course from Marmara University Computer Programming.
 
@@ -37,9 +37,17 @@ py manage.py runserver
 
 ## :star: Packages
 - **[Pillow](https://github.com/python-pillow/Pillow "Pillow")**  &rarr; Used for image management.
+```bash
+pip install Pillow
+```
 - **[Six](https://github.com/benjaminp/six "Six")**  &rarr; Used in token creation.
+```bash
+pip install six
+```
 - **[İyzipay](https://github.com/iyzico/iyzipay-python "İyzipay")**  &rarr; Used for payment management.
-
+```bash
+pip install iyzipay
+```
 ## :star: Cars for Payment
 
 Click [here](https://github.com/iyzico/iyzipay-python/blob/master/README.md#mock-test-cards "here") for original.
@@ -281,5 +289,5 @@ class OrderItem(models.Model):
 ```
 
 ### :star: Database Diagram
-[![Database Diagram](https://www.hizliresim.com/3vkbwow "Database Diagram")](https://www.hizliresim.com/3vkbwow "Database Diagram")
+![Database Diagram](https://i.hizliresim.com/3vkbwow.png)
 
