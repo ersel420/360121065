@@ -1,7 +1,7 @@
 
-# 360121065 - E-Commerce Website Demo with Django
+# 360121065 - E Commerce Website Demo with Django
 
-A simple e-commerce website demo made with Django. It was made as a project of the BLY2005 course from Marmara University Computer Programming.
+A simple e-commerce website demo made with [Django](https://github.com/django/django "Django"). It was made as a project of the BLY2005 course from Marmara University Computer Programming.
 
 ## :star: Start
 ### :star: Instructions
