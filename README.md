@@ -291,3 +291,5 @@ class OrderItem(models.Model):
 ### :star: Database Diagram
 ![Database Diagram](https://i.hizliresim.com/3vkbwow.png)
 
+### :star: Template
+Click [here](https://templatemo.com/tm-526-vanilla "here") for original template. (Templatemo 526 Vanilla)
