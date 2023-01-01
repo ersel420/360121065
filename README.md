@@ -7,7 +7,7 @@ A simple e-commerce website demo made with Django. It was made as a project of t
 ### :star: Instructions
 1. Download repository.
 2. Extract in a folder.
-3. Open folder with visual studio code.
+3. Open folder with Visual Studio Code.
 
 ### :star: Commands
 
@@ -16,8 +16,9 @@ py manage.py runserver
 ```
 
 ### :star: Admin
-1. **Admin Page:** http://127.0.0.1:8000/admin
-2. **E-Mail:** user@admin.com, **Password:** admin
+1. **Admin Pag:**  &rarr; http://127.0.0.1:8000/admin
+2. **✉️**  &rarr; user@admin.com
+3. **🔑**  &rarr; admin
 
 ## :star: Accounts
 
@@ -48,11 +49,11 @@ pip install six
 ```bash
 pip install iyzipay
 ```
-## :star: Cars for Payment
+## :star: Cards for Payment
 
 Click [here](https://github.com/iyzico/iyzipay-python/blob/master/README.md#mock-test-cards "here") for original.
 
-### :star: Classic Cards
+### :star: Normal Cards
 Card Number| Bank| Card Type
 -----------| ----| ---------
 5526080000000006 | Akbank| Master Card
