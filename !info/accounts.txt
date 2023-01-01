@@ -1,0 +1,9 @@
+ACCOUNTS
+-------------------------------------------------------
+E-Mail				Password		Account Type
+
+yusuferselbal@gmail.com 	admin 		Superuser
+user@test.com 			test 			Normaluser
+a@a.com 				ezekielartiff 	Normaluser
+d@d.com 				123 			Normaluser
+-------------------------------------------------------
