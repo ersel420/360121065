@@ -27,7 +27,7 @@ py manage.py runserver
 |user@admin.com|admin|Superuser|
 |user@test.com|test|Normaluser|
 |a@a.com|ezekielartiff|Normaluser|
-|d@d.com|123|Normaluser|
+|b@b.com|123|Normaluser|
 
 ## :star: Apps
 - **mytemplate**  &rarr; Core.
@@ -54,20 +54,20 @@ pip install iyzipay
 Click [here](https://github.com/iyzico/iyzipay-python/blob/master/README.md#mock-test-cards "here") for original.
 
 ### :star: Normal Test Cards
-Card Number| Bank| Card Type
------------| ----| ---------
-5526080000000006 | Akbank| Master Card
-4603450000000000 | Denizbank| Visa
-4729150000000005 | Denizbank Bonus| Visa
-5311570000000005 | Finansbank| Master Card
-9792030000000000 | Finansbank| Troy
-5400360000000003 | Garanti Bankası| Master Card
-374427000000003  | Garanti Bankası| American Express
-5528790000000008 | Halkbank| Master Card
-5504720000000003 | HSBC Bank| Master Card
-4543590000000006 | Türkiye İş Bankası| Visa
-4157920000000002 | Vakıfbank| Visa
-5451030000000000 | Yapı ve Kredi Bankası| Master Card
+Card Number | Bank | Card Type
+----------- | ---- | ---------
+5526080000000006 | Akbank | Master Card
+4603450000000000 | Denizbank | Visa
+4729150000000005 | Denizbank Bonus | Visa
+5311570000000005 | Finansbank | Master Card
+9792030000000000 | Finansbank | Troy
+5400360000000003 | Garanti Bankası | Master Card
+374427000000003  | Garanti Bankası | American Express
+5528790000000008 | Halkbank | Master Card
+5504720000000003 | HSBC Bank | Master Card
+4543590000000006 | Türkiye İş Bankası | Visa
+4157920000000002 | Vakıfbank | Visa
+5451030000000000 | Yapı ve Kredi Bankası | Master Card
 
 ### :star: Cross Border Test Cards
 
@@ -79,22 +79,22 @@ Card Number      | Country
 
 Card Number| Description
 -----------| -----------
-5406670000000009  | Success but cannot be cancelled, refund or post auth
-4111111111111129  | Not sufficient funds
-4129111111111111  | Do not honour
-4128111111111112  | Invalid transaction
-4127111111111113  | Lost card
-4126111111111114  | Stolen card
-4125111111111115  | Expired card
-4124111111111116  | Invalid cvc2
-4123111111111117  | Not permitted to card holder
-4122111111111118  | Not permitted to terminal
-4121111111111119  | Fraud suspect
-4120111111111110  | Pickup card
-4130111111111118  | General error
-4131111111111117  | Success but mdStatus is 0
-4141111111111115  | Success but mdStatus is 4
-4151111111111112  | 3dsecure initialize failed
+5406670000000009  | Success but Cannot be Cancelled, Refund or Post Auth.
+4111111111111129  | Not Sufficient Funds.
+4129111111111111  | Do Not Honour.
+4128111111111112  | Invalid Transaction.
+4127111111111113  | Lost Card.
+4126111111111114  | Stolen Card.
+4125111111111115  | Expired Card.
+4124111111111116  | Invalid CVC2.
+4123111111111117  | Not Permitted to Card Holder.
+4122111111111118  | Not Permitted to Terminal.
+4121111111111119  | Fraud Suspect
+4120111111111110  | Pickup Card.
+4130111111111118  | General Error.
+4131111111111117  | Success but "mdStatus" is 0.
+4141111111111115  | Success but "mdStatus" is 4.
+4151111111111112  | 3D Secure Initialize Failed.
 
 ## :star: Database
 ### :star: Website App Models
@@ -290,7 +290,7 @@ class OrderItem(models.Model):
 ```
 
 ### :star: Database Diagram
-![Database Diagram](https://i.hizliresim.com/3vkbwow.png)
+![Database Diagram](https://i.hizliresim.com/nf8swhq.png)
 
 ## :star: Template
 Click [here](https://templatemo.com/tm-526-vanilla "here") for original template. **(Templatemo 526 Vanilla)**
