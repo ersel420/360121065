@@ -22,7 +22,7 @@ py manage.py runserver
 
 ## :star: Accounts
 
-|E-Mail Adress|Password|Account Type|
+|E-Mail Address|Password|Account Type|
 | ------------ | ------------ | ------------ |
 |user@admin.com|admin|Superuser|
 |user@test.com|test|Normaluser|
