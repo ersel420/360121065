@@ -16,7 +16,7 @@ py manage.py runserver
 ```
 
 ### :star: Admin
-1. **Admin Pag:**  &rarr; http://127.0.0.1:8000/admin
+1. **Admin Page**  &rarr; http://127.0.0.1:8000/admin
 2. **✉️**  &rarr; user@admin.com
 3. **🔑**  &rarr; admin
 
@@ -37,15 +37,15 @@ py manage.py runserver
 - **payment**  &rarr; Payment and order management.
 
 ## :star: Packages
-- **[Pillow](https://github.com/python-pillow/Pillow "Pillow")**  &rarr; Used for image management.
+- **[Pillow](https://github.com/python-pillow/Pillow "Pillow") (9.3.0)**  &rarr; Used for image management.
 ```bash
 pip install Pillow
 ```
-- **[Six](https://github.com/benjaminp/six "Six")**  &rarr; Used in token creation.
+- **[Six](https://github.com/benjaminp/six "Six") (1.16.0)**  &rarr; Used in token creation.
 ```bash
 pip install six
 ```
-- **[Iyzipay](https://github.com/iyzico/iyzipay-python "Iyzipay")**  &rarr; Used for payment management.
+- **[Iyzipay](https://github.com/iyzico/iyzipay-python "Iyzipay") (1.0.37)**  &rarr; Used for payment management.
 ```bash
 pip install iyzipay
 ```
@@ -236,7 +236,7 @@ class UserBase(AbstractBaseUser, PermissionsMixin):
         send_mail(
             subject,
             message,
-            'l@1.com',
+            'admin@example.com',
             [self.email],
             fail_silently = False,
         )
